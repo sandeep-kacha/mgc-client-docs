@@ -43,9 +43,9 @@ The client needs to send HTTP requests with the Authorization header that contai
 
 Merit expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: Bearer secret_test_fviips0apLsfviips0FkwOfpX`
+`Authorization: Bearer secret_token`
 
-<aside class="notice">You must replace <code>secret_test_fviips0apLsfviips0FkwOfpX</code> with your API key.</aside>
+<aside class="notice">You must replace <code>secret_token</code> with your API key.</aside>
 
 
 Info on Vendor ID 
@@ -67,7 +67,7 @@ Description | URL
 Staging | https://testapi.meritincentives.com/api/v1  
 Host | https://testapi.meritincentives.com/ 
 Content-Type | application/json 
-Authorization | Bearer secret_test_fviips0apLsfviips0FkwOfpX 
+Authorization | Bearer secret_token 
 
 # Giftcards
 
@@ -151,7 +151,7 @@ batch_id | Yes* | This is obtained from the create gift card response
 ```shell
 curl --location --request GET 'https://testapi.meritincentives.com/api/v1/currency/giftcards?vendor_id=Vendor ID provided by Merit&batch_id=This is obtained from the create gift card response' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer secret_test_fviips0apLsfviips0FkwOfpX'
+--header 'Authorization: Bearer secret_token'
 ```
 
 
@@ -211,7 +211,7 @@ We would recommend using Merit's dynamic <code>giftcard_url</code> in the repons
 ```shell
 curl --location --request GET 'https://testapi.meritincentives.com/api/v1/currency/giftcards/balance_check?card_number=This is obtained from the get gift card response as giftcard_number&card_id=This is obtained from the get gift card response&card_key=This is obtained from the get gift card response as giftcard_key' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer secret_test_fviips0apLsfviips0FkwOfpX'
+--header 'Authorization: Bearer secret_token'
 ```
 
 
@@ -262,7 +262,7 @@ card_key | Optional | This is obtained from the get gift card response as giftca
 ```shell
 curl --location --request GET 'https://testapi.meritincentives.com/api/v1/currency/giftcards/get_batch?vendor_id=enter vendor id&request_id=request id of card' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer secret_test_fviips0apLsfviips0FkwOfpX'
+--header 'Authorization: Bearer secret_token'
 ```
 
 
@@ -307,7 +307,7 @@ request_id | Yes* | Request ID of giftcard
 ```shell
   curl --location --request POST 'https://testapi.meritincentives.com/api/v1/currency/giftcards/spend' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer secret_test_fviips0apLsfviips0FkwOfpX' \
+--header 'Authorization: Bearer secret_token' \
 --data-raw '{
     "giftcard": {
         "card_number": "46544843246545401",
@@ -381,7 +381,7 @@ phone | Optional | Giftcard Owner phone number
 ```shell
   curl --location --request POST 'https://testapi.meritincentives.com/api/v1/currency/giftcards/cancel_transaction' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer secret_test_fviips0apLsfviips0FkwOfpX' \
+--header 'Authorization: Bearer secret_token' \
 --data-raw '{
     "transaction_id": "transaction_id",
     "store_id":"store_id"
@@ -427,7 +427,7 @@ store_id | Yes* | same Store id from that transaction was created
 ```shell
   curl --location --request POST 'https://testapi.meritincentives.com/api/v1/currency/giftcards/sell' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer secret_test_fviips0apLsfviips0FkwOfpX' \
+--header 'Authorization: Bearer secret_token' \
 --data-raw '{
     "sell": {
         "sender_first_name": "Sender",
@@ -506,7 +506,7 @@ phone | Optional | Giftcard Owner phone number
 ```shell
 curl --location --request GET 'https://testapi.meritincentives.com/api/v1/currency/giftcards/vendor_balance?vendor_id=enter vendor id given by Merit' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer secret_test_fviips0apLsfviips0FkwOfpX'
+--header 'Authorization: Bearer secret_token'
 ```
 
 
@@ -554,7 +554,7 @@ vendor_id | Yes* | Vendor ID provided by Merit
 ```shell
 curl --location --request GET 'https://testapi.meritincentives.comapi/v1/currency/giftcards/check_inventory?campaign_id=Product ID provided by Merit' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer secret_test_fviips0apLsfviips0FkwOfpX'
+--header 'Authorization: Bearer secret_token'
 ```
 
 
